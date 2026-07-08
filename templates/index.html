@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House Price Prediction</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+
+<h1>🏡 AI House Price Prediction</h1>
+
+<p>Smart ML-powered House Price Estimator</p>
+
+</div>
+
+<form action="/predict" method="POST" class="form-grid">
+
+<input type="number" step="any" name="CRIM" placeholder="Crime Rate" required>
+
+<input type="number" step="any" name="ZN" placeholder="Residential Land" required>
+
+<input type="number" step="any" name="INDUS" placeholder="Industrial Area" required>
+
+<input type="number" step="any" name="CHAS" placeholder="Charles River (0/1)" required>
+
+<input type="number" step="any" name="NOX" placeholder="Nitric Oxide" required>
+
+<input type="number" step="any" name="RM" placeholder="Average Rooms" required>
+
+<input type="number" step="any" name="AGE" placeholder="House Age" required>
+
+<input type="number" step="any" name="DIS" placeholder="Distance to Jobs" required>
+
+<input type="number" step="any" name="RAD" placeholder="Highway Access" required>
+
+<input type="number" step="any" name="TAX" placeholder="Property Tax" required>
+
+<input type="number" step="any" name="PTRATIO" placeholder="Pupil Teacher Ratio" required>
+
+<input type="number" step="any" name="B" placeholder="B Value" required>
+
+<input type="number" step="any" name="LSTAT" placeholder="Lower Status Population" required>
+
+<button type="submit">Predict Price</button>
+
+</form>
+
+{% if prediction_text %}
+
+<div class="result">
+
+{{ prediction_text }}
+
+</div>
+
+{% endif %}
+
+</div>
+
+<footer>
+
+Developed by <b>Anushka Saxena</b> 
+
+</footer>
+
+</body>
+
+</html>
